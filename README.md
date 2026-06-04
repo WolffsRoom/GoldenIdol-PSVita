@@ -10,8 +10,19 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
 
 1. Head to the **[Releases](../../releases)** tab.
 2. Download the latest `GoldenIdonPatch.zip` and `GoldenIdonVita-x.x.x.vpk`.
-3. Extract `GoldenIdonPatch.zip` on your PC and run `ApplyPatch.bat`. Follow the on-screen instructions to select your language and provide your original Steam `game.pck` file.
-4. Transfer the resulting `game_data` folder and install the `.vpk` to your PS Vita via VitaShell.
+3. Extract `GoldenIdonPatch.zip` into a new folder on your PC.
+
+### HOW TO APPLY THE PATCH:
+1. Open Steam, right-click on "The Case of the Golden Idol", go to **Manage -> Browse local files**.
+2. Copy the file named `game.pck` from that folder.
+3. Paste the `game.pck` file **EXACTLY INTO THE `DataSteam` FOLDER** of your extracted patcher.
+4. Go back to the main patcher folder and run `ApplyPatch.bat`. Follow the on-screen instructions to select your language.
+5. Wait for the process to finish. It will automatically apply the patch and create a new folder named `game_data` containing your patched game file.
+6. Install the `GoldenIdonVita-0.3.0.vpk` on your PS Vita using VitaShell or **[FMVita](https://github.com/WolffsRoom/FMVita)** (my personalized VitaShell).
+7. Connect your Vita via FTP or USB, and copy the entire newly created `game_data` folder into your Vita's game app folder at:
+   `ux0:app/IDOL00001/`
+   *(This ensures the file ends up exactly at `ux0:app/IDOL00001/game_data/game.pck`, not just the root app folder).*
+8. Have fun!
 
 > **Note**: You MUST own the original game on Steam to generate the Vita playable files. No game assets are provided in this repository.
 
