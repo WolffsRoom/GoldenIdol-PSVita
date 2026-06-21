@@ -38,6 +38,10 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
 - **Circle (O)**: Cancel / Back
 - **Triangle / Square**: Open Thinking Panel
 
+<p align="center">
+  <img src="controlsvita.png" alt="PS Vita Controls" width="70%">
+</p>
+
 ---
 
 ## Screenshots
@@ -91,9 +95,21 @@ A series of `.py` tools were created to help automate the massive series of adju
 
 ---
 
+## PS Vita Improvements
+
+Since this port is based on the Godot version, I took the liberty (as it was fairly straightforward) of reworking several parts of the game to make it feel native on the console:
+
+- **Touch-optimized screens** — reworked some screens, such as the main menu (`splash_screen_dlc`), to be optimized for the touch screen.
+- **New controls image** — redesigned the controls help image specifically for the PS Vita.
+- **Screen-opening animations** — improved and added animations to the opening of menus and dialogs.
+- **Mouse support** — developed a virtual cursor/mouse system driven by the analog stick.
+- **Reworked controls** — replaced the original Xbox-style control scheme to make better use of the PS Vita's buttons.
+
+---
+
 ## Planned Improvements
-- Adjust control settings
-- Apply an automatic translation through ApplyPatch.bat itself, using the Unity version files for Godot as a base.
+- [x] Adjust control settings
+- [x] Apply an automatic translation through ApplyPatch.bat itself, using the Unity version files for Godot as a base.
 
 ---
 
