@@ -112,8 +112,13 @@ Since this port is based on the Godot version, I took the liberty (as it was eas
 ---
 
 ## Planned Improvements
-- [x] ~~Adjust control settings~~
-- [x] ~~Apply an automatic translation through ApplyPatch.bat itself, using the Unity version files for Godot as a base.~~
+- **v0.8.0**
+  - Put trophy support.
+  - Set a performance improvements during scenario transitions.
+- **v0.9.0**
+  - Put support for the OST DLC.
+- **v1.0.0**
+  - Put language switching in the patcher for the generated PCK, using data from the Unity version.
 
 ---
 
