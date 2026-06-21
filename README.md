@@ -18,13 +18,13 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
 3. Paste the `game.pck` file **EXACTLY INTO THE `DataSteam` FOLDER** of your extracted patcher.
 4. Go back to the main patcher folder and run `ApplyPatch.bat`. Follow the on-screen instructions to select your language.
 5. Wait for the process to finish. It will automatically apply the patch and create a new folder named `game_data` containing your patched game file.
-6. Install the `GoldenIdol-Vita-0.3.0.vpk` on your PS Vita using VitaShell or **[FMVita](https://github.com/WolffsRoom/FMVita)** (my personalized VitaShell).
+6. Install the `GoldenIdol-Vita-X.X.X.vpk` on your PS Vita using VitaShell or **[FMVita](https://github.com/WolffsRoom/FMVita)** (my personalized VitaShell).
 7. Connect your Vita via FTP or USB, and copy the entire newly created `game_data` folder into your Vita's game app folder at:
    `ux0:app/IDOL00001/`
    *(This ensures the file ends up exactly at `ux0:app/IDOL00001/game_data/game.pck`, not just the root app folder).*
 8. Have fun!
 
-> **Note**: You MUST own the original game on Steam to generate the Vita playable files. No game assets are provided in this repository.
+> **⚠️ Note**: You MUST own the original game on Steam to generate the Vita playable files. No game assets are provided in this repository.
 
 > **UPDATE WARNING**: IF YOU WANT TO UPDATE THE GAME, UPDATE THE GAME FILES TOO, NOT JUST VPK
 
@@ -32,15 +32,19 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
 
 ## Controls (Controles)
 
+<p align="center">
+  <img src="controlsvita.png" alt="PS Vita Controls" width="70%">
+</p>
+
 - **D-Pad Up/Down**: Zoom In / Zoom Out
+- **D-Pad Left**: Show/Hide highlights
+- **Joystick Right:** Move in zoom
+- **Joystick Left:** Mouse control
 - **Touch Screen**: Interact (click)
 - **Cross (X)**: Confirm / Interact
 - **Circle (O)**: Cancel / Back
 - **Triangle / Square**: Open Thinking Panel
-
-<p align="center">
-  <img src="controlsvita.png" alt="PS Vita Controls" width="70%">
-</p>
+- **Select:** Options
 
 ---
 
@@ -97,19 +101,19 @@ A series of `.py` tools were created to help automate the massive series of adju
 
 ## PS Vita Improvements
 
-Since this port is based on the Godot version, I took the liberty (as it was fairly straightforward) of reworking several parts of the game to make it feel native on the console:
+Since this port is based on the Godot version, I took the liberty (as it was easy) of reworking several parts of the game to make it feel native on the console:
 
-- **Touch-optimized screens** — reworked some screens, such as the main menu (`splash_screen_dlc`), to be optimized for the touch screen.
-- **New controls image** — redesigned the controls help image specifically for the PS Vita.
-- **Screen-opening animations** — improved and added animations to the opening of menus and dialogs.
-- **Mouse support** — developed a virtual cursor/mouse system driven by the analog stick.
-- **Reworked controls** — replaced the original Xbox-style control scheme to make better use of the PS Vita's buttons.
+- **Touch-optimized screens:** Rework in some screens, such as the main menu (`splash_screen_dlc`), to be optimized for the touch screen.
+- **New controls image:** Redesigned the controls help image specifically for the PS Vita.
+- **Screen-opening animations:** Improved and added animations to the opening of menus and dialogs.
+- **Mouse support:** Developed a virtual cursor/mouse system driven by the analog stick.
+- **Reworked controls:** Replaced the original Xbox-style control scheme to make better use of the PS Vita's buttons.
 
 ---
 
 ## Planned Improvements
-- [x] Adjust control settings
-- [x] Apply an automatic translation through ApplyPatch.bat itself, using the Unity version files for Godot as a base.
+- [x] ~~Adjust control settings~~
+- [x] ~~Apply an automatic translation through ApplyPatch.bat itself, using the Unity version files for Godot as a base.~~
 
 ---
 
