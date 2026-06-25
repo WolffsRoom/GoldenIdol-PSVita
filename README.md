@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets\GoldenIdolVita.png" alt="The Case of the Golden Idol - PS Vita Port">
+  <img src="Assets/GoldenIdolVita.png" alt="The Case of the Golden Idol - PS Vita Port">
 </p>
 
 # The Case of the Golden Idol - PS Vita Port
@@ -35,7 +35,7 @@ _Rest assured, save files are not lost when uninstalling or updating the game (t
 ## Controls (Controles)
 
 <p align="center">
-  <img src="controlsvita.png" alt="PS Vita Controls" width="70%">
+  <img src="Assets/controlsvita.png" alt="PS Vita Controls" width="70%">
 </p>
 
 <div align="center">
@@ -55,12 +55,12 @@ _Rest assured, save files are not lost when uninstalling or updating the game (t
 ## Screenshots
 
 <p align="center">
-  <img src="Prints/2026-06-04-162650-948987.png" width="48%">
-  <img src="Prints/2026-06-04-162656-152818.png" width="48%">
-  <img src="Prints/2026-06-04-162711-784811.png" width="48%">
-  <img src="Prints/2026-06-04-162738-077905.png" width="48%">
-  <img src="Prints/2026-06-04-162740-162957.png" width="48%">
-  <img src="Prints/2026-06-04-162748-788421.png" width="48%">
+  <img src="Assets/Prints/2026-06-04-162650-948987.png" width="48%">
+  <img src="Assets/Prints/2026-06-04-162656-152818.png" width="48%">
+  <img src="Assets/Prints/2026-06-04-162711-784811.png" width="48%">
+  <img src="Assets/Prints/2026-06-04-162738-077905.png" width="48%">
+  <img src="Assets/Prints/2026-06-04-162740-162957.png" width="48%">
+  <img src="Assets/Prints/2026-06-04-162748-788421.png" width="48%">
 </p>
 
 ---
