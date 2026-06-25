@@ -26,7 +26,9 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
 
 > **⚠️ Note**: You MUST own the original game on Steam to generate the Vita playable files. No game assets are provided in this repository.
 
-> **UPDATE WARNING**: IF YOU WANT TO UPDATE THE GAME, UPDATE THE GAME FILES TOO, NOT JUST VPK
+> **UPDATE NOTICE**: IF YOU WISH TO UPDATE THE GAME, PLEASE **UPDATE THE GAME FILES** AS WELL ('game.pck'), NOT JUST THE VPK.
+_Rest assured, save files are not lost when uninstalling or updating the game (they are stored in 'ux0:data\godot\app_userdata\The Case of Golden Idol\...)._
+
 
 ---
 
