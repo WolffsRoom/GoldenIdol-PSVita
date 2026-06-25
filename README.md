@@ -135,34 +135,25 @@ A set of `.py` tools automate the adjustments needed to fit the PC assets within
 
 Since this port is based on the Godot version, I took the liberty (as it was easy) of reworking several parts of the game to make it feel native on the console:
 
-**Controls & input**
+**Controls and input:**
 - **Mouse support:** Virtual cursor/mouse system driven by the analog stick.
 - **Reworked controls:** Replaced the original Xbox-style scheme to make better use of the PS Vita's buttons.
 - **Help screen:** The on-screen command list now shows the real PS Vita controls instead of the PC ones.
 - **"O" (Cancel) fix:** It was mapped to both *accept* and *cancel*, causing menus to close and immediately reopen; it now performs cancel only.
 - **Mouse Speed setting:** Configurable cursor speed slider under Settings.
 
-**Zoom**
+**Zoom:**
 - **Progressive zoom:** Holding L/R or D-Pad Up/Down now zooms smoothly (continuous) instead of fixed steps, both for the scene camera and the Thinking Panel.
 - **Thinking Panel zoom:** Zoom the deduction board (up to 3x) to read the text on the small screen, with an opaque backdrop so the game scene is never exposed at the edges.
 - **Hint zoom:** The hint illustrations can be zoomed and panned the same way.
 
-**Visual & UI**
+**Visual and UI:**
 - **Touch-optimized screens:** Reworked screens such as the main menu (`splash_screen_dlc`) for the touch screen.
 - **Screen-opening animations:** Added/improved animations for menus, dialogs and transitions.
 - **Scene-only transitions:** The black transition between locations now only covers the scene, keeping the toolbar visible.
 - **Overhauled Credits & Discord supporters screens:** Rolling credits that return automatically when finished.
 - **Brightness setting:** New Settings slider that fades the screen darker or lighter.
 - **Object-description box:** Fixed the text centering inside the item description box.
-
-**Audio & video**
-- **Volume sync fix:** Corrected volume synchronization in the project.
-- **Intermission videos:** Re-encoded to a lighter resolution for smoother playback, with the scenario selector hidden behind the video to reduce GPU load.
-
-**Performance & footprint**
-- **DLC crash fix:** Resolved the `C2-12828-1` out-of-memory crash on the *Mystery of Monkey Paw Island* DLC scene.
-- **Texture rendering fixes:** Fixed white/black VRAM textures (DLC splash) and related memory adjustments.
-- **Project cleanup:** Unused scenes and prototype images moved out of the build for a smaller PCK.
 
 ---
 
