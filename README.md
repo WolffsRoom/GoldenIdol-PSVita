@@ -36,15 +36,13 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
   <img src="controlsvita.png" alt="PS Vita Controls" width="70%">
 </p>
 
-- **D-Pad Up/Down**: Zoom In / Zoom Out
-- **D-Pad Left**: Show/Hide highlights
-- **Joystick Right:** Move in zoom
-- **Joystick Left:** Mouse control
-- **Touch Screen**: Interact (click)
-- **Cross (X)**: Confirm / Interact
-- **Circle (O)**: Cancel / Back
-- **Triangle / Square**: Open Thinking Panel
-- **Select:** Options
+| Control | Action | Control | Action |
+|:---:|:---|:---:|:---|
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/PlayStation_Up_button.svg/20px-PlayStation_Up_button.svg.png" height="18"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/PlayStation_Down_button.svg/20px-PlayStation_Down_button.svg.png" height="18"> | Zoom In / Zoom Out | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PlayStation_Portable_X_button.svg/20px-PlayStation_Portable_X_button.svg.png" height="18"> | Confirm / Interact |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/PlayStation_Left_button.svg/20px-PlayStation_Left_button.svg.png" height="18"> | Show / Hide highlights | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/PlayStation_Portable_C_button.svg/20px-PlayStation_Portable_C_button.svg.png" height="18"> | Cancel / Back |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/PlayStation_button_analog_R.svg/20px-PlayStation_button_analog_R.svg.png" height="18"> | Move while zoomed | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/PlayStation_Portable_T_button.svg/20px-PlayStation_Portable_T_button.svg.png" height="18"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/PlayStation_Portable_S_button.svg/20px-PlayStation_Portable_S_button.svg.png" height="18"> | Open Thinking Panel |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/PlayStation_button_analog_L.svg/20px-PlayStation_button_analog_L.svg.png" height="18"> | Mouse control | **SELECT** | Options |
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/PlayStation_4_Touch_Pad_Holding_button.svg/40px-PlayStation_4_Touch_Pad_Holding_button.svg.png" height="20"> | Interact (click) | | |
 
 ---
 
@@ -82,32 +80,85 @@ This port was made possible thanks to the following incredible tools:
 
 ## Python Automation Tools
 
-A series of `.py` tools were created to help automate the massive series of adjustments needed to make the PC assets run natively on the PS Vita constraints. These can be found in the `Tools.zip` or the source tree:
+A set of `.py` tools automate the adjustments needed to fit the PC assets within the PS Vita constraints. They now live in the `Tools/` folder, organised by category (see `Tools/README.md` for full details and usage):
 
-| Tool Script | Usage / Purpose |
+**`Tools/stex/`** — low-level `.stex` (StreamTexture) format operations
+| Script | Purpose |
 | :--- | :--- |
-| `lossless_vita_optimizer.py` | Automatically optimizes large textures for PS Vita's VRAM constraints without visible quality loss. |
-| `restore_imports.py` | Restores corrupted or missing `.import` configuration files after the original PCK extraction. |
-| `apply_vita_settings.py` | Automatically forces necessary PS Vita target settings directly into the `project.godot` file. |
-| `patch_dlcs_v2.py` | Integrates and patches the DLCs (*Spider of Lanka* & *Lemurian Vampire*) for console compatibility. |
-| `patch_credits_v4.py` | Adjusts and adapts the ending credits UI constraints to match the Vita's native resolution. |
-| `fix_idol_animation.py` | Tweaks memory-heavy animation loops so they run flawlessly and smoothly on Vita memory. |
-| `adjust_anim.py` | Recalculates screen bounds and positional anchors for game elements during animations. |
-| `improvements.py` | Applies overall UI/UX improvements, specifically adapting pointer and text elements. |
-| `fix_steam_issues.py` | Removes Steamworks dependencies and PC-specific API calls that would crash the console runtime. |
-| `patch_engine_animated.py` | Custom multi-threaded patching engine built with `bsdiff4` to generate the final user patch. |
+| `fix_vram_textures.py` | Repoints VRAM (mode=2) textures to the RGBA4444 variant the Vita can actually render (fixes white/black textures). |
+| `fix_webp_stex.py` | Swaps large lossless-WebP `.stex` that the Vita can't decode for their uncompressed variant. |
+| `halve_stex.py` | Downscales an uncompressed RGBA4444 `.stex` 2x (packing-agnostic). |
+| `resize_stex.py` | Fractional (num/den) downscale of an uncompressed RGBA4444 `.stex`. |
+
+**`Tools/textures/`** — texture / asset optimisation
+| Script | Purpose |
+| :--- | :--- |
+| `lossless_vita_optimizer.py` | Repacks oversized textures into Power-of-Two grids and rewrites the scene `Rect2` coords. |
+| `build_beach_textures.py` | Rebuilds the DLC beach scene textures (dithered RGBA4444 + frame repack) for CDRAM. |
+| `adjust_anim.py` | Choreographs the custom "Ported by WolffsRoom" splash animation into the boot sequence. |
+| `fix_idol_animation.py` | Restores the splash statue atlas and applies bilinear filter + scale tweaks. |
+
+**`Tools/project/`** — project hygiene
+| Script | Purpose |
+| :--- | :--- |
+| `cleanup_unused.py` | Detects and moves unused scenes + prototype images out of the build (smaller PCK), with an undo manifest. |
+| `restore_imports.py` | Selective import strategy (lossless for NPOT, VRAM for POT) to avoid the PowerVR GPU crash. |
+
+**`Tools/vita/`** — Vita platform configuration
+| Script | Purpose |
+| :--- | :--- |
+| `apply_vita_settings.py` | Forces the Vita target settings into `project.godot`. |
+| `patch_sfo_extended_memory.py` | Patches `PARAM.SFO` for the extended memory mode. |
+
+**`Tools/patches/`** — GDScript / content patches
+| Script | Purpose |
+| :--- | :--- |
+| `fix_steam_issues.py` | Removes Steamworks dependencies that would crash the console runtime. |
+| `patch_dlcs_v2.py` | Unlocks both DLCs (*Spider of Lanka* & *Lemurian Vampire*) locally. |
+| `patch_credits_v4.py` | Injects the custom port splash into the boot/credits sequence. |
+| `improvements.py` | Input/control rewrites (virtual cursor, zoom, Select -> cancel). |
+
+**`Tools/trophy/`** — trophies
+| Script | Purpose |
+| :--- | :--- |
+| `build_trp.py` | Packs the Steam-derived trophy set into a PS Vita `TROPHY.TRP` (NoTrpDrm format). |
+
+> The distributable patcher engine (`build_patch.py`, `patch_apply.py`, `patch_engine_animated.py`) ships with the patcher in the Releases tab.
 
 ---
 
-## PS Vita Improvements
+## Improvements for the PS Vita
 
 Since this port is based on the Godot version, I took the liberty (as it was easy) of reworking several parts of the game to make it feel native on the console:
 
-- **Touch-optimized screens:** Rework in some screens, such as the main menu (`splash_screen_dlc`), to be optimized for the touch screen.
-- **New controls image:** Redesigned the controls help image specifically for the PS Vita.
-- **Screen-opening animations:** Improved and added animations to the opening of menus and dialogs.
-- **Mouse support:** Developed a virtual cursor/mouse system driven by the analog stick.
-- **Reworked controls:** Replaced the original Xbox-style control scheme to make better use of the PS Vita's buttons.
+**Controls & input**
+- **Mouse support:** Virtual cursor/mouse system driven by the analog stick.
+- **Reworked controls:** Replaced the original Xbox-style scheme to make better use of the PS Vita's buttons.
+- **Help screen:** The on-screen command list now shows the real PS Vita controls instead of the PC ones.
+- **"O" (Cancel) fix:** It was mapped to both *accept* and *cancel*, causing menus to close and immediately reopen; it now performs cancel only.
+- **Mouse Speed setting:** Configurable cursor speed slider under Settings.
+
+**Zoom**
+- **Progressive zoom:** Holding L/R or D-Pad Up/Down now zooms smoothly (continuous) instead of fixed steps, both for the scene camera and the Thinking Panel.
+- **Thinking Panel zoom:** Zoom the deduction board (up to 3x) to read the text on the small screen, with an opaque backdrop so the game scene is never exposed at the edges.
+- **Hint zoom:** The hint illustrations can be zoomed and panned the same way.
+
+**Visual & UI**
+- **Touch-optimized screens:** Reworked screens such as the main menu (`splash_screen_dlc`) for the touch screen.
+- **Screen-opening animations:** Added/improved animations for menus, dialogs and transitions.
+- **Scene-only transitions:** The black transition between locations now only covers the scene, keeping the toolbar visible.
+- **Overhauled Credits & Discord supporters screens:** Rolling credits that return automatically when finished.
+- **Brightness setting:** New Settings slider that fades the screen darker or lighter.
+- **Object-description box:** Fixed the text centering inside the item description box.
+
+**Audio & video**
+- **Volume sync fix:** Corrected volume synchronization in the project.
+- **Intermission videos:** Re-encoded to a lighter resolution for smoother playback, with the scenario selector hidden behind the video to reduce GPU load.
+
+**Performance & footprint**
+- **DLC crash fix:** Resolved the `C2-12828-1` out-of-memory crash on the *Mystery of Monkey Paw Island* DLC scene.
+- **Texture rendering fixes:** Fixed white/black VRAM textures (DLC splash) and related memory adjustments.
+- **Project cleanup:** Unused scenes and prototype images moved out of the build for a smaller PCK.
 
 ---
 
