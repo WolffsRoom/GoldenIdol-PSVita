@@ -36,13 +36,17 @@ A port of **The Case of the Golden Idol** for the PlayStation Vita, adapted from
   <img src="controlsvita.png" alt="PS Vita Controls" width="70%">
 </p>
 
+<div align="center">
+
 | Control | Action | Control | Action |
 |:---:|:---|:---:|:---|
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/PlayStation_Up_button.svg/20px-PlayStation_Up_button.svg.png" height="18"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/PlayStation_Down_button.svg/20px-PlayStation_Down_button.svg.png" height="18"> | Zoom In / Zoom Out | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PlayStation_Portable_X_button.svg/20px-PlayStation_Portable_X_button.svg.png" height="18"> | Confirm / Interact |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/PlayStation_Left_button.svg/20px-PlayStation_Left_button.svg.png" height="18"> | Show / Hide highlights | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/PlayStation_Portable_C_button.svg/20px-PlayStation_Portable_C_button.svg.png" height="18"> | Cancel / Back |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/PlayStation_button_analog_R.svg/20px-PlayStation_button_analog_R.svg.png" height="18"> | Move while zoomed | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/PlayStation_Portable_T_button.svg/20px-PlayStation_Portable_T_button.svg.png" height="18"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/PlayStation_Portable_S_button.svg/20px-PlayStation_Portable_S_button.svg.png" height="18"> | Open Thinking Panel |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/PlayStation_button_analog_L.svg/20px-PlayStation_button_analog_L.svg.png" height="18"> | Mouse control | **SELECT** | Options |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/PlayStation_4_Touch_Pad_Holding_button.svg/40px-PlayStation_4_Touch_Pad_Holding_button.svg.png" height="20"> | Interact (click) | | |
+| <img src="Assets/SonyButtons/up.png" height="18"> <img src="Assets/SonyButtons/down.png" height="18"> | Zoom In / Zoom Out | <img src="Assets/SonyButtons/cross.png" height="18"> | Confirm / Interact |
+| <img src="Assets/SonyButtons/left.png" height="18"> | Show / Hide highlights | <img src="Assets/SonyButtons/circle.png" height="18"> | Cancel / Back |
+| <img src="Assets/SonyButtons/analog_r.png" height="18"> | Move while zoomed | <img src="Assets/SonyButtons/triangle.png" height="18"> <img src="Assets/SonyButtons/square.png" height="18"> | Open Thinking Panel |
+| <img src="Assets/SonyButtons/analog_l.png" height="18"> | Mouse control | **SELECT** | Options |
+| <img src="Assets/SonyButtons/touchpad.png" height="20"> | Interact (click) | | |
+
+</div>
 
 ---
 
