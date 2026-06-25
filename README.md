@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="GoldenIdolVita.png" alt="The Case of the Golden Idol - PS Vita Port">
+  <img src="Assets\GoldenIdolVita.png" alt="The Case of the Golden Idol - PS Vita Port">
 </p>
 
 # The Case of the Golden Idol - PS Vita Port
